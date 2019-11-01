@@ -1,20 +1,27 @@
 import React, { Fragment } from 'react'
 
 const Sushi = (props) => {
+
+  handleClick = (props) => { //switches sushiPlateEmpty - T/F
+    if(props.sushiPlateEmpty === false) {
+      return props.img_url = null // return an empty plate???
+    } else {
+      return <img src={props.img_url} width="100%" />
+    }
+  }
+
+
   return (
     <div className="sushi">
       <div className="plate" 
-           onClick={/* Give me a callback! */ null}>
-        { 
-          /* Tell me if this sushi has been eaten! */ 
-          true ?
-            null
-          :
-            <img src={/* Give me an image source! */} width="100%" />
-        }
+           onClick={handleClick(props)}>
+        {/* { sushiPlateEmpty ?  
+          props.img_url = null :
+          <img src={props.img_url} width="100%" />
+        } */}
       </div>
       <h4 className="sushi-details">
-        {/* Give me a name! */} - ${/* Give me a price! */}
+        {props.name} - ${props.price}
       </h4>
     </div>
   )

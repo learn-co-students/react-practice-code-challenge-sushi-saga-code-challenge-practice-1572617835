@@ -1,18 +1,19 @@
-import React, { Fragment } from 'react'
-import MoreButton from '../components/MoreButton'
+import React, { Fragment } from 'react';
+import MoreButton from '../components/MoreButton';
+import Sushi from '../components/Sushi';
 
 const SushiContainer = (props) => {
+
+  // console.log(props)
   return (
-    <Fragment>
+    props.sushiArray.map(sushi => (
+      <Fragment key={sushi.id}>
       <div className="belt">
-        {
-          /* 
-             Render Sushi components here!
-          */
-        }
-        <MoreButton />
+        <Sushi sushiObj={sushi} sushiPlateEmpty={sushiPlateEmpty}/>
+        {/* <MoreButton /> this creates a million buttons */}
       </div>
     </Fragment>
+    ))
   )
 }
 
