@@ -42,7 +42,7 @@ body {
   height: 100px;
   width: 100px;
   position: absolute;
-  left: 300px;
+  /* left: 300px; */
 }
 
 .sushi-details {
