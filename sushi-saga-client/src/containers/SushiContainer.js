@@ -25,6 +25,9 @@ class SushiContainer extends Component {
   }
 
   render () {
+    if (this.state.startPoint > this.props.sushis.length) {
+      this.setState({startPoint: 0})
+    }
     let currentPage = this.props.sushis.slice(this.state.startPoint, this.state.startPoint + 4)
     let sushiArray = this.renderSushis(currentPage);
     
