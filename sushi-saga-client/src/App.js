@@ -28,7 +28,7 @@ class App extends Component {
   eatSushi = (id) => {
     let newSushis = this.state.sushis.map(sushi => {
       if (sushi.id == id) {
-        if (this.state.money - sushi.price > 0) {
+        if (this.state.money - sushi.price >= 0) {
           let newSushisEaten = this.state.sushisEaten.concat(sushi);
           this.setState({money: this.state.money - sushi.price, sushisEaten: newSushisEaten})
           return {...sushi, eaten: true}
