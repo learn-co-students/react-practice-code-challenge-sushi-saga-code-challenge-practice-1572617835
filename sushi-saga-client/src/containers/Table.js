@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react'
-
+import SushiWallet from '../components/SushiWallet';
 class Table extends Component {
 
   renderPlates = (array) => {
@@ -17,6 +17,7 @@ class Table extends Component {
       <h1 className="remaining">
         You have: ${ this.props.money } remaining!
       </h1>
+      
       <div className="table">
         <div className="stack">
           {
